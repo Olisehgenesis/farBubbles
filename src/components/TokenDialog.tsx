@@ -3,6 +3,7 @@
 import { Token } from "~/types/tokens";
 import { cn } from "~/lib/utils";
 import { useState } from "react";
+import Image from "next/image";
 
 interface TokenDialogProps {
   token: Token | null;
@@ -15,14 +16,28 @@ export default function TokenDialog({ token, isOpen, onClose }: TokenDialogProps
   const [amount, setAmount] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
 
-  if (!token || !isOpen) return null;
+  // Debug logging
+  console.log('TokenDialog render:', {
+    token: token ? { symbol: token.symbol, name: token.name, logoURI: token.logoURI } : null,
+    isOpen,
+    activeTab,
+    amount,
+    isProcessing
+  })
+
+  if (!token || !isOpen) {
+    console.log('TokenDialog: Not rendering - no token or not open');
+    return null;
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    console.log('TokenDialog: Form submitted:', { tokenSymbol: token.symbol, amount, activeTab });
     setIsProcessing(true);
     
     // Simulate processing
     setTimeout(() => {
+      console.log('TokenDialog: Processing complete');
       setIsProcessing(false);
       onClose();
     }, 2000);
@@ -44,10 +59,26 @@ export default function TokenDialog({ token, isOpen, onClose }: TokenDialogProps
             <div className="flex items-center gap-3">
               <div className="w-12 h-12 rounded-full bg-white/40 backdrop-blur-sm flex items-center justify-center border border-white/50">
                 {token.logoURI ? (
-                  <img
+                  <Image
                     src={token.logoURI}
                     alt={token.symbol}
+                    width={32}
+                    height={32}
                     className="w-8 h-8 rounded-full object-cover"
+                    onLoad={() => {
+                      console.log('TokenDialog: Image loaded successfully:', { 
+                        tokenSymbol: token.symbol, 
+                        logoURI: token.logoURI 
+                      });
+                    }}
+                    onError={(e) => {
+                      console.error('TokenDialog: Image failed to load:', { 
+                        tokenSymbol: token.symbol, 
+                        logoURI: token.logoURI,
+                        error: e,
+                        target: e.target
+                      });
+                    }}
                   />
                 ) : (
                   <span className="text-lg font-bold text-emerald-800">

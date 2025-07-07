@@ -19,7 +19,7 @@ if (!projectId) {
 }
 
 export const config = getDefaultConfig({
-  appName: "Buy Hypercert",
+  appName: "CeloBubbles",
   projectId: process.env.NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID || "",
   chains: [celo, celoAlfajores],
   transports: {
@@ -27,7 +27,7 @@ export const config = getDefaultConfig({
     [celoAlfajores.id]: http(),
   },
   wallets,
-  ssr: true,
+  ssr: false,
 });
 
 const queryClient = new QueryClient();

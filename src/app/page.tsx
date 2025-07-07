@@ -5,11 +5,11 @@ export const revalidate = 300;
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
-    title: "farBubbles - Explore Celo Network Tokens",
-    description: "Discover and explore tokens on the Celo network with beautiful animated bubbles. View Ubeswap token list with interactive animations.",
+    title: "OrbitalVerse - Explore the Crypto Universe",
+    description: "A futuristic crypto indexing app where planets represent cryptocurrencies. Watch as they grow and shrink with market movements in this immersive space environment.",
     openGraph: {
-      title: "farBubbles - Explore Celo Network Tokens",
-      description: "Discover and explore tokens on the Celo network with beautiful animated bubbles.",
+      title: "OrbitalVerse - Explore the Crypto Universe",
+      description: "A futuristic crypto indexing app where planets represent cryptocurrencies. Watch as they grow and shrink with market movements in this immersive space environment.",
       type: "website",
     },
   };

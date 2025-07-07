@@ -69,7 +69,7 @@ export async function searchTokenBySymbol(symbol: string): Promise<string | null
     
     // Find exact symbol match (case-insensitive)
     const exactMatch = data.coins?.find(
-      (coin: any) => coin.symbol.toLowerCase() === symbol.toLowerCase()
+      (coin: { symbol: string }) => coin.symbol.toLowerCase() === symbol.toLowerCase()
     );
 
     return exactMatch?.id || null;

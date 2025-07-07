@@ -1,10 +1,10 @@
-# farBubbles - Celo Network Token Explorer
+# Orbital Caps - Celo Network Token Explorer
 
-A beautiful, interactive token explorer for the Celo network with animated bubbles and multi-chain support.
+A beautiful, interactive token explorer for the Celo network with animated planets and multi-chain support.
 
 ## Getting Started
 
-This is a [NextJS](https://nextjs.org/) + TypeScript + React app that displays tokens from the Celo network in an interactive bubble interface. It currently supports Celo with plans to add Base, Monad, and Solana networks.
+This is a [NextJS](https://nextjs.org/) + TypeScript + React app that displays tokens from the Celo network in an interactive planet interface. It currently supports Celo with plans to add Base, Monad, and Solana networks.
 
 To install dependencies:
 

@@ -5,8 +5,8 @@ import "~/app/globals.css";
 import { Providers } from "~/app/providers";
 
 export const metadata: Metadata = {
-  title: "Buy Hypercert",
-  description: "Buy Hypercert Frame",
+  title: "Orbital Caps",
+  description: "Explore tokens in the cosmic realm of Orbital Caps",
 };
 
 export default async function RootLayout({
